@@ -42,4 +42,4 @@ app.*.map.json
 
 # PSD Files
 *.PSD
-BasicApp.gif
+*.gif
