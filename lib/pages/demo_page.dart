@@ -5,14 +5,16 @@ import 'package:multiple_selection_dialogue_app/widgets/multi_select_dialog.dart
 class DemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    /// Stores the selected flavours
     List<String> flavours = [];
+
     return ElevatedButton(
-        child: Text('Flavour'),
+        child: Text('Flavours'),
         onPressed: () async {
           flavours = await showDialog<List<String>>(
                   context: context,
                   builder: (_) => MultiSelectDialog(
-                          question: Text('Which Flavours Do You Like?'),
+                          question: Text('Select Your Flavours'),
                           answers: [
                             'Chocolate',
                             'Caramel',
