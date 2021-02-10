@@ -14,16 +14,15 @@ class MultiSelectFormField extends FormField<List<String>> {
   final String questionText;
 
   // Constructor
-  MultiSelectFormField(
-      {this.buttonText,
-      this.questionText,
-      this.itemList,
-      BuildContext context,
-      FormFieldSetter<List<String>> onSaved,
-      FormFieldValidator<List<String>> validator,
-      List<String> initialValue,
-      bool autovalidate = false})
-      : super(
+  MultiSelectFormField({
+    this.buttonText,
+    this.questionText,
+    this.itemList,
+    BuildContext context,
+    FormFieldSetter<List<String>> onSaved,
+    FormFieldValidator<List<String>> validator,
+    List<String> initialValue,
+  }) : super(
           onSaved: onSaved,
           validator: validator,
           initialValue: initialValue ?? [], // Avoid Null

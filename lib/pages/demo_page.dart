@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multiple_selection_dialogue_app/widgets/multi_select_form_field.dart';
 
-/// A demo page that displays an [ElevatedButton]
+/// A demo page that displays an [ElevatedButton] wrappped inside a [Form]
 class DemoPage extends StatelessWidget {
   /// A Global Key to track the form's state
   final _formKey = GlobalKey<FormState>();
