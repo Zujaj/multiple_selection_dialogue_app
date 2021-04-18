@@ -1,16 +1,42 @@
-# multiple_selection_dialogue_app
+# MULTI-SELECT DIALOGUE APP
+A custom widget shows a validated dialogue with multiple selection options and the count of selected options upon hitting the submit button.  
 
-A new Flutter project.
+✨ Are you a flutter developer who is facing trouble creating a Multiple Selection Dialogue?
 
-## Getting Started
+🚫 Have you been restricted to use any pubspec packages?
 
-This project is a starting point for a Flutter application.
+✔️ Do you wish to apply basic validation to such a dialogue?
 
-A few resources to get you started if this is your first Flutter project:
+👍 Fear no more because this project covers everything in a detailed manner.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+To get the details, read the medium articles from the below link.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# THE CHALLENGE
+![Illustration of a button opening a multiple selection dialogue](https://miro.medium.com/max/700/1*a1jJC-62kWfvc-u2NQeO_A.png)
+
+- A button that pops up a dialogue having a single question with multiple answers & a submit button.
+
+- On the dialogue, allow the user to select multiple options.
+
+- Validate the dialogue to show an error in case of no selection.
+
+- Show the count of selected options on the button after successful submission.
+
+**NOTE: Use of pubspec packages strictly not allowed.**
+
+# THE RESULTS
+
+After quite brainstorming , the goal was achieved successfully.
+
+![MultiSelectDialogueApp](https://miro.medium.com/max/400/1*2Fr4X0UmCPkeOgX_FW_8vg.gif)
+
+# TOOLS & LANGUAGE
+ 
+- [Microsoft Visual Studio Code](https://code.visualstudio.com/download)
+- [Flutter](https://flutter.dev/) 
+
+# MEDIUM ARTICLES
+
+<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@anynomous/1"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@anynomous/3" alt="Recent Article "/>
+
+<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@anynomous/1"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@anynomous/2" alt="Recent Article "/>
