@@ -37,6 +37,6 @@ After quite brainstorming , the goal was achieved successfully.
 
 # MEDIUM ARTICLES
 
-<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@anynomous/1"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@anynomous/3" alt="Recent Article "/>
+<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@zujaj/3"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@zujaj/3" alt="Multi-Select Dialogue in Flutter: The Unit Test Phase"/>
 
-<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@anynomous/1"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@anynomous/2" alt="Recent Article "/>
+<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@zujaj/4"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@zujaj/4" alt="Multi-Select Dialogue in Flutter: A Versatile Approach"/>
