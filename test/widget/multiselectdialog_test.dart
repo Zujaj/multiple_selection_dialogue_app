@@ -2,77 +2,75 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:multiple_selection_dialogue_app/widgets/multi_select_dialog.dart';
 
+/// Holds the question.
+var questionText = 'What is your favourite color?';
+
+/// Holds the answers.
+var answerList = ['Red', 'Green', 'Blue'];
+
+// Create a [MultiSelectDialog] widget
+var multiSelectDialogWidget = MultiSelectDialog(
+  answers: answerList,
+  question: Text(questionText, key: Key('title')),
+);
+
+/// Builds the [MultiSelectDialog] widget
+Future<void> init(WidgetTester tester) async {
+  // Pump the [MultiSelectDialog] by wrapping it inside a [MaterialApp] widget
+  await tester.pumpWidget(MaterialApp(home: multiSelectDialogWidget));
+
+  // Wait for the build method to finish
+  await tester.pumpAndSettle();
+}
+
+/// Taps at the given [CheckBoxListTile] index.
+Future<void> tapAtCheckBoxListTile(
+    {@required WidgetTester tester, @required int index}) async {
+  // Build the MultiSelectDialog Widget
+  await tester.pumpWidget(MaterialApp(home: multiSelectDialogWidget));
+
+  // Find the [CheckboxListTile] Widget
+  var checkBoxListTileFinder = find.byType(CheckboxListTile);
+
+  // Expect three [CheckboxListTile] Widgets
+  expect(checkBoxListTileFinder, findsNWidgets(answerList.length));
+
+  // Tap on the second [CheckboxListTile] Widget
+  await tester.tap(checkBoxListTileFinder.at(index));
+
+  // Wait for animation to finish
+  await tester.pump();
+
+  // Find the [ElevatedButton] Widget having specific properties.
+  var submitButtonFinder = find.byWidgetPredicate((widget) =>
+      widget is ElevatedButton &&
+      widget.child is Text &&
+      widget.onPressed != () => Null);
+
+  // Expect a single [ElevatedButton] Widget
+  expect(submitButtonFinder, findsOneWidget);
+
+  // Tap on the [ElevatedButton] Widget
+  await tester.tap(submitButtonFinder);
+
+  // Wait for animation to finish
+  await tester.pump();
+
+  // Expect [selectedItems] is not empty
+  expect(multiSelectDialogWidget.selectedItems.isEmpty, isFalse);
+
+  // Expect [selectedItems] has a value
+  expect(multiSelectDialogWidget.selectedItems.contains(answerList[index]),
+      isTrue);
+}
+
 void main() {
-  /// Holds the question.
-  var questionText = 'What is your favourite color?';
-
-  /// Holds the answers.
-  var answerList = ['Red', 'Green', 'Blue'];
-
-  // Create a [MultiSelectDialog] widget
-  var multiSelectDialogWidget = MultiSelectDialog(
-    answers: answerList,
-    question: Text(questionText, key: Key('title')),
-  );
-
-  /// Builds the [MultiSelectDialog] widget
-  Future<void> init(WidgetTester tester) async {
-    // Pump the [MultiSelectDialog] by wrapping it inside a [MaterialApp] widget
-    await tester.pumpWidget(MaterialApp(home: multiSelectDialogWidget));
-
-    // Wait for the build method to finish
-    await tester.pumpAndSettle();
-  }
-
-  Future<void> tapAtCheckBoxListTile(
-      {@required WidgetTester tester, @required int index}) async {
-    // Build the MultiSelectDialog Widget
-    await tester.pumpWidget(MaterialApp(home: multiSelectDialogWidget));
-
-    // Find the [CheckboxListTile] Widget
-    var checkBoxListTileFinder = find.byType(CheckboxListTile);
-
-    // Expect three [CheckboxListTile] Widgets
-    expect(checkBoxListTileFinder, findsNWidgets(answerList.length));
-
-    // Tap on the second [CheckboxListTile] Widget
-    await tester.tap(checkBoxListTileFinder.at(index));
-
-    // Wait for animation to finish
-    await tester.pump();
-
-    // Find the [ElevatedButton] Widget having specific properties.
-    var submitButtonFinder = find.byWidgetPredicate((widget) =>
-        widget is ElevatedButton &&
-        widget.child is Text &&
-        widget.onPressed != () => Null);
-
-    // Expect a single [ElevatedButton] Widget
-    expect(submitButtonFinder, findsOneWidget);
-
-    // Tap on the [ElevatedButton] Widget
-    await tester.tap(submitButtonFinder);
-
-    // Wait for animation to finish
-    await tester.pump();
-
-    // Expect [selectedItems] is not empty
-    expect(multiSelectDialogWidget.selectedItems.isEmpty, isFalse);
-
-    // Expect [selectedItems] has a value
-    expect(multiSelectDialogWidget.selectedItems.contains(answerList[index]),
-        isTrue);
-  }
-
   group('[Multi Select Dialog Widget] UI - ', () {
     testWidgets('Returns a [SimpleDialog] Widget', (WidgetTester tester) async {
-      // Build the MultiSelectDialog Widget
+      // Build the MultiSelectDialog Widget.
       await init(tester);
 
-      // Print the Widget Tree
-      // tester.allWidgets.forEach((element) => print(element.toStringShallow()));
-
-      // Find the widget [SimpleDialog] by type
+      // Find the widget [SimpleDialog] by type.
       var simpleDialog = find.byType(SimpleDialog);
 
       // Expect only one [SimpleDialog] widget.
@@ -97,7 +95,7 @@ void main() {
 
     testWidgets('The [SimpleDialog] has three [CheckboxListTile] Widgets',
         (WidgetTester tester) async {
-      // Build the MultiSelectDialog Widget
+      // Build the [MultiSelectDialog] Widget
       await init(tester);
 
       /// Holds List[CheckboxListTile] with no selection
