@@ -167,17 +167,17 @@ void main() {
 
   group('[Multi Select Dialog Widget] - ', () {
     testWidgets(
-        'On Tapping the first [CheckboxListTile], the result is Red',
+        "Select the first [CheckboxListTile] & Tap on 'Submit' Button to yield 'Red'",
         (WidgetTester tester) async =>
             await tapAndSubmit(tester: tester, index: 0));
 
     testWidgets(
-        'On Tapping the second [CheckboxListTile], the result is Green',
+        "Select the second [CheckboxListTile] & Tap on 'Submit' Button to yield 'Green'",
         (WidgetTester tester) async =>
             await tapAndSubmit(tester: tester, index: 1));
 
     testWidgets(
-        'On Tapping the third [CheckboxListTile], the result is Blue',
+        "Select the third [CheckboxListTile] & Tap on 'Submit' Button to yield 'Blue'",
         (WidgetTester tester) async =>
             await tapAndSubmit(tester: tester, index: 2));
   });
