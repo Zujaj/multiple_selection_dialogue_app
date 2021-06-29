@@ -23,8 +23,8 @@ Future<void> init(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-/// Taps at the given [CheckBoxListTile] index.
-Future<void> tapAtCheckBoxListTile(
+/// Selects the given [CheckBoxListTile] index & taps the 'Submit' Button.
+Future<void> tapAndSubmit(
     {@required WidgetTester tester, @required int index}) async {
   // Build the MultiSelectDialog Widget
   await tester.pumpWidget(MaterialApp(home: multiSelectDialogWidget));
@@ -169,16 +169,16 @@ void main() {
     testWidgets(
         'On Tapping the first [CheckboxListTile], the result is Red',
         (WidgetTester tester) async =>
-            await tapAtCheckBoxListTile(tester: tester, index: 0));
+            await tapAndSubmit(tester: tester, index: 0));
 
     testWidgets(
         'On Tapping the second [CheckboxListTile], the result is Green',
         (WidgetTester tester) async =>
-            await tapAtCheckBoxListTile(tester: tester, index: 1));
+            await tapAndSubmit(tester: tester, index: 1));
 
     testWidgets(
         'On Tapping the third [CheckboxListTile], the result is Blue',
         (WidgetTester tester) async =>
-            await tapAtCheckBoxListTile(tester: tester, index: 2));
+            await tapAndSubmit(tester: tester, index: 2));
   });
 }
